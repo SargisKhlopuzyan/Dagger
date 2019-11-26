@@ -1,5 +1,6 @@
 package com.example.dagger.component
 
+import com.example.dagger.MainActivity
 import com.example.dagger.dagger_objects.Car
 import dagger.Component
 
@@ -12,4 +13,6 @@ import dagger.Component
 /**(modules = [CarModule::class])*/
 interface CarComponent {
     fun getCar(): Car
+
+    fun inject(activity: MainActivity)
 }
