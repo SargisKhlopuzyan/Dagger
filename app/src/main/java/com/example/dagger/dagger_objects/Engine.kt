@@ -7,12 +7,11 @@ import javax.inject.Inject
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
-class Engine {
+class Engine @Inject constructor(block: Block, cylinders: Cylinders, sparkPlugs: SparkPlugs) {
 
     //(block: Block, cylinders: Cylinders, sparkPlugs: SparkPlugs)
-    @Inject
-    constructor() {
-
-    }
+//    @Inject
+//    constructor() {
+//    }
 
 }

@@ -8,12 +8,11 @@ import javax.inject.Inject
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
-class Remote {
+class Remote @Inject constructor(){
 
-    @Inject
-    constructor() {
-
-    }
+//    @Inject
+//    constructor() {
+//    }
 
     fun setListener(car: Car) {
         Log.e(TAG, "Remote connected")

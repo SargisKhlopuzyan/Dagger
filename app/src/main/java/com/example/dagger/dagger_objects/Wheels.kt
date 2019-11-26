@@ -7,11 +7,10 @@ import javax.inject.Inject
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
-class Wheels {
+class Wheels /**@Inject*/ constructor(rims: Rims, tires: Tires) {
 
-    //(tires: Tires, rims: Rims)
-    @Inject
-    constructor() {
+//    @Inject
+//    constructor(rims: Rims, tires: Tires) {
+//    }
 
-    }
 }
