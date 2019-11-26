@@ -8,21 +8,15 @@ import javax.inject.Inject
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
-class Car {
-
-    @Inject lateinit var engine: Engine
-//    @Inject lateinit var wheels: Wheels
+class Remote {
 
     @Inject
-    constructor(wheels: Wheels)
+    constructor() {
 
-    @Inject
-    fun enableRemote(remote: Remote) {
-        remote.setListener(this)
     }
 
-    fun drive() {
-        Log.e(TAG,"Car -> drive()")
+    fun setListener(car: Car) {
+        Log.e(TAG, "Remote connected")
     }
 
     companion object {
