@@ -20,9 +20,8 @@ class MainActivity : AppCompatActivity() {
 //        val component: CarComponent = DaggerCarComponent.create()
 
         val component: CarComponent = DaggerCarComponent.builder()
-            .dieselEngineModule(
-                DieselEngineModule(100)
-            )
+            .horsePower(150)
+//            .dieselEngineModule(DieselEngineModule(100))
             .build()
 
         component.inject(this)

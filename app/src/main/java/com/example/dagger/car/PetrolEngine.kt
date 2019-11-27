@@ -8,10 +8,10 @@ import javax.inject.Inject
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
-class PetrolEngine @Inject constructor() : Engine {
+class PetrolEngine @Inject constructor(private var horsePower: Int) : Engine {
 
     override fun start() {
-        Log.e(TAG, "Petrol engine started")
+        Log.e(TAG, "Petrol engine started. HorsePower: $horsePower")
     }
 
     companion object {
