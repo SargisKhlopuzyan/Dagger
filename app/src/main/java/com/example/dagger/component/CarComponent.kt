@@ -2,6 +2,7 @@ package com.example.dagger.component
 
 import com.example.dagger.MainActivity
 import com.example.dagger.dagger_objects.Car
+import com.example.dagger.module.DieselEngineModule
 import com.example.dagger.module.WheelsModule
 import dagger.Component
 
@@ -10,8 +11,7 @@ import dagger.Component
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
-@Component(modules = [WheelsModule::class])
-/**(modules = [CarModule::class])*/
+@Component(modules = [WheelsModule::class, DieselEngineModule::class])
 interface CarComponent {
     fun getCar(): Car
     fun inject(activity: MainActivity)

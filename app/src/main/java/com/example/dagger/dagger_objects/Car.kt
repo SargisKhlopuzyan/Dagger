@@ -22,6 +22,7 @@ class Car {
     }
 
     fun drive() {
+        engine.start()
         Log.e(TAG,"Car -> drive()")
     }
 

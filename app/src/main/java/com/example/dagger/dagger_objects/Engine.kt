@@ -7,11 +7,13 @@ import javax.inject.Inject
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
-class Engine @Inject constructor(block: Block, cylinders: Cylinders, sparkPlugs: SparkPlugs) {
+interface Engine /**@Inject constructor(block: Block, cylinders: Cylinders, sparkPlugs: SparkPlugs)*/ {
 
     //(block: Block, cylinders: Cylinders, sparkPlugs: SparkPlugs)
 //    @Inject
 //    constructor() {
 //    }
+
+    fun start()
 
 }
