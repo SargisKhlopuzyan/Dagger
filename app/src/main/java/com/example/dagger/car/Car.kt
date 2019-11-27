@@ -10,11 +10,17 @@ import javax.inject.Inject
  */
 class Car {
 
-    @Inject lateinit var engine: Engine
-//    @Inject lateinit var wheels: Wheels
+    var driver: Driver
+    var wheels: Wheels
 
     @Inject
-    constructor(wheels: Wheels)
+    lateinit var engine: Engine
+
+    @Inject
+    constructor(driver: Driver, wheels: Wheels) {
+        this.driver = driver
+        this.wheels = wheels
+    }
 
     @Inject
     fun enableRemote(remote: Remote) {
@@ -23,7 +29,7 @@ class Car {
 
     fun drive() {
         engine.start()
-        Log.e(TAG,"Car -> drive()")
+        Log.e(TAG, "$driver drives $this")
     }
 
     companion object {

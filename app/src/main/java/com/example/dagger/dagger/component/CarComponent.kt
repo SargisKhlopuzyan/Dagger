@@ -7,15 +7,18 @@ import com.example.dagger.dagger.module.WheelsModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
+import javax.inject.Singleton
 
 /**
  * Created by FastShift, Inc., on 11/26/2019.
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
+@Singleton
 @Component(modules = [WheelsModule::class, PetrolEngineModule::class])
 //@Component(modules = [WheelsModule::class, DieselEngineModule::class])
 interface CarComponent {
+
     fun getCar(): Car
     fun inject(activity: MainActivity)
 

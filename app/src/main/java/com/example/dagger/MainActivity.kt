@@ -5,13 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.dagger.car.Car
 import com.example.dagger.dagger.component.CarComponent
 import com.example.dagger.dagger.component.DaggerCarComponent
-import com.example.dagger.dagger.module.DieselEngineModule
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var car: Car
+    lateinit var car1: Car
+
+    @Inject
+    lateinit var car2: Car
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,13 +23,14 @@ class MainActivity : AppCompatActivity() {
 
         val component: CarComponent = DaggerCarComponent.builder()
             .horsePower(150)
-            .engineCapacity(100)
+            .engineCapacity(1400)
 //            .dieselEngineModule(DieselEngineModule(100))
             .build()
 
         component.inject(this)
-//        car = component.getCar()
+//        car1 = component.getCar()
 
-        car.drive()
+        car1.drive()
+        car2.drive()
     }
 }
