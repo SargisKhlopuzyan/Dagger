@@ -12,7 +12,7 @@ import dagger.Provides
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
 @Module
-class WheelsModule {
+abstract class WheelsModule {
 
     @Module
     companion object {

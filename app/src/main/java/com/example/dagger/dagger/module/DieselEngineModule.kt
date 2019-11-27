@@ -2,8 +2,8 @@ package com.example.dagger.dagger.module
 
 import com.example.dagger.car.DieselEngine
 import com.example.dagger.car.Engine
-import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
 /**
  * Created by FastShift, Inc., on 11/27/2019.
@@ -11,9 +11,11 @@ import dagger.Module
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
 @Module
-abstract class DieselEngineModule {
+class DieselEngineModule(private var horsePower: Int) {
 
-    @Binds
-    abstract fun bindEngine(engine: DieselEngine): Engine
+    @Provides
+    fun provideEngine(): Engine {
+        return DieselEngine(horsePower)
+    }
 
 }
