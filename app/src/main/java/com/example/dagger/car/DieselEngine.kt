@@ -1,4 +1,4 @@
-package com.example.dagger.dagger_objects
+package com.example.dagger.car
 
 import android.util.Log
 import javax.inject.Inject
@@ -8,13 +8,14 @@ import javax.inject.Inject
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
-class PetrolEngine @Inject constructor() : Engine {
+class DieselEngine @Inject constructor() : Engine {
 
     override fun start() {
-        Log.e(TAG, "Petrol engine started")
+        Log.e(TAG, "Diesel engine started")
     }
 
     companion object {
         private const val TAG: String = "Car"
     }
+
 }

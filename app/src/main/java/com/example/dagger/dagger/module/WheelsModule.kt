@@ -1,8 +1,8 @@
-package com.example.dagger.module
+package com.example.dagger.dagger.module
 
-import com.example.dagger.dagger_objects.Rims
-import com.example.dagger.dagger_objects.Tires
-import com.example.dagger.dagger_objects.Wheels
+import com.example.dagger.car.Rims
+import com.example.dagger.car.Tires
+import com.example.dagger.car.Wheels
 import dagger.Module
 import dagger.Provides
 

@@ -2,9 +2,9 @@ package com.example.dagger
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.dagger.component.CarComponent
-import com.example.dagger.component.DaggerCarComponent
-import com.example.dagger.dagger_objects.Car
+import com.example.dagger.car.Car
+import com.example.dagger.dagger.component.CarComponent
+import com.example.dagger.dagger.component.DaggerCarComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {

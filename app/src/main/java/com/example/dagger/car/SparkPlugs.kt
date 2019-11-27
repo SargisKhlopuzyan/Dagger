@@ -1,4 +1,4 @@
-package com.example.dagger.dagger_objects
+package com.example.dagger.car
 
 import javax.inject.Inject
 
@@ -7,5 +7,5 @@ import javax.inject.Inject
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
-class Rims /**@Inject*/ constructor() {
+class SparkPlugs @Inject constructor(){
 }

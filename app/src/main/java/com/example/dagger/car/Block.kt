@@ -1,4 +1,4 @@
-package com.example.dagger.dagger_objects
+package com.example.dagger.car
 
 import javax.inject.Inject
 

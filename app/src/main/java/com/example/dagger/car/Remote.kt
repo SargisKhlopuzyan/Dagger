@@ -1,17 +1,21 @@
-package com.example.dagger.dagger_objects
+package com.example.dagger.car
 
 import android.util.Log
+import javax.inject.Inject
 
 /**
  * Created by FastShift, Inc., on 11/26/2019.
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
-class Tires
-/**@Inject*/ constructor() {
+class Remote @Inject constructor(){
 
-    fun inflate() {
-        Log.e(TAG, "Tires inflated")
+//    @Inject
+//    constructor() {
+//    }
+
+    fun setListener(car: Car) {
+        Log.e(TAG, "Remote connected")
     }
 
     companion object {

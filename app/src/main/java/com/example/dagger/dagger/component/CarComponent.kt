@@ -1,9 +1,10 @@
-package com.example.dagger.component
+package com.example.dagger.dagger.component
 
 import com.example.dagger.MainActivity
-import com.example.dagger.dagger_objects.Car
-import com.example.dagger.module.DieselEngineModule
-import com.example.dagger.module.WheelsModule
+import com.example.dagger.car.Car
+import com.example.dagger.dagger.module.DieselEngineModule
+import com.example.dagger.dagger.module.PetrolEngineModule
+import com.example.dagger.dagger.module.WheelsModule
 import dagger.Component
 
 /**
@@ -11,6 +12,7 @@ import dagger.Component
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
+//@Component(modules = [WheelsModule::class, PetrolEngineModule::class])
 @Component(modules = [WheelsModule::class, DieselEngineModule::class])
 interface CarComponent {
     fun getCar(): Car
