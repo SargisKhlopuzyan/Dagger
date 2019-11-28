@@ -3,6 +3,7 @@ package com.example.dagger.dagger.component
 import com.example.dagger.car.Driver
 import com.example.dagger.dagger.module.DieselEngineModule
 import com.example.dagger.dagger.module.DriverModule
+import com.example.dagger.dagger.module.PetrolEngineModule
 import dagger.Component
 import javax.inject.Singleton
 
@@ -21,6 +22,6 @@ interface AppComponent {
      * Factory method
      * fun getActivityComponent(dieselEngineModule: DieselEngineModule, ...): ActivityComponent
      * */
-    fun getActivityComponent(dieselEngineModule: DieselEngineModule): ActivityComponent
+    fun getActivityComponentBuilder(): ActivityComponent.Builder
 
 }
