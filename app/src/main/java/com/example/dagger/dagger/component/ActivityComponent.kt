@@ -1,29 +1,33 @@
 package com.example.dagger.dagger.component
 
 import com.example.dagger.MainActivity
-import com.example.dagger.car.Car
 import com.example.dagger.dagger.module.PetrolEngineModule
 import com.example.dagger.dagger.module.WheelsModule
+import com.example.dagger.dagger.scop.PerActivity
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
-import javax.inject.Singleton
 
 /**
  * Created by FastShift, Inc., on 11/26/2019.
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
-@Singleton
-@Component(modules = [WheelsModule::class, PetrolEngineModule::class])
+@PerActivity
+@Component(
+    dependencies = [AppComponent::class],
+    modules = [WheelsModule::class, PetrolEngineModule::class]
+)
 //@Component(modules = [WheelsModule::class, DieselEngineModule::class])
-interface CarComponent {
+interface ActivityComponent {
 
-    fun getCar(): Car
+    //    fun getCar(): Car
     fun inject(activity: MainActivity)
 
     @Component.Builder
     interface Builder {
+
+        fun appComponent(appComponent: AppComponent): Builder
 
         @BindsInstance
         fun horsePower(@Named("horsePower") horsePower: Int): Builder
@@ -31,7 +35,7 @@ interface CarComponent {
         @BindsInstance
         fun engineCapacity(@Named("engineCapacity") engineCapacity: Int): Builder
 
-        fun build(): CarComponent
+        fun build(): ActivityComponent
     }
 
 }

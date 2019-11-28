@@ -8,7 +8,7 @@ import javax.inject.Singleton
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
-@Singleton
-class Driver @Inject constructor() {
-
+/**@Singleton*/
+class Driver /**@Inject constructor()*/ {
+    //We don't own this class so we can't annotate it with @Inject
 }

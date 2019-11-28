@@ -3,8 +3,9 @@ package com.example.dagger
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dagger.car.Car
-import com.example.dagger.dagger.component.CarComponent
-import com.example.dagger.dagger.component.DaggerCarComponent
+import com.example.dagger.dagger.component.ActivityComponent
+import com.example.dagger.dagger.component.DaggerActivityComponent
+import com.example.dagger.dagger.component.DaggerAppComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -19,16 +20,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        val component: CarComponent = DaggerCarComponent.create()
-
-        val component: CarComponent = DaggerCarComponent.builder()
-            .horsePower(150)
+        val activityComponent: ActivityComponent = DaggerActivityComponent
+            .builder()
+            .horsePower(120)
             .engineCapacity(1400)
-//            .dieselEngineModule(DieselEngineModule(100))
+            .appComponent((application as ExampleApp).getAppComponent())
             .build()
 
-        component.inject(this)
-//        car1 = component.getCar()
+
+        activityComponent.inject(this)
 
         car1.drive()
         car2.drive()
