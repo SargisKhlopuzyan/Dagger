@@ -25,4 +25,9 @@ interface AppComponent {
 //    fun getActivityComponentBuilder(): ActivityComponent.Builder
     fun getActivityComponentFactory(): ActivityComponent.Factory
 
+    @Component.Factory
+    interface Factory {
+        fun create(driverModule: DriverModule /**, ... */): AppComponent
+    }
+
 }

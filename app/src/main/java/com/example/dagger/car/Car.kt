@@ -31,7 +31,7 @@ class Car {
 
     fun drive() {
         engine.start()
-        Log.e(TAG, "$driver drives $this")
+        Log.e(TAG, "$driver ${driver.name} drives $this")
     }
 
     companion object {

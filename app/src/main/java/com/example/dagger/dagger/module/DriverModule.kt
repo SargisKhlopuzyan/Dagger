@@ -10,6 +10,7 @@ import javax.inject.Singleton
  *
  * @author Sargis Khlopuzyan (sargis.khlopuzyan@fcc.am)
  */
+/*
 @Module
 abstract class DriverModule {
 
@@ -22,6 +23,17 @@ abstract class DriverModule {
         fun provideDriver(): Driver {
             return Driver()
         }
+    }
+}
+*/
+
+@Module
+class DriverModule constructor(var name: String) {
+
+    @Provides
+    @Singleton
+    fun provideDriver(): Driver {
+        return Driver(name)
     }
 
 }
