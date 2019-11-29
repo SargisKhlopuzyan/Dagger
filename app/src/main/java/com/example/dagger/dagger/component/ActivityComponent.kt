@@ -2,6 +2,7 @@ package com.example.dagger.dagger.component
 
 import com.example.dagger.MainActivity
 import com.example.dagger.car.Car
+import com.example.dagger.dagger.module.DieselEngineModule
 import com.example.dagger.dagger.module.PetrolEngineModule
 import com.example.dagger.dagger.module.WheelsModule
 import com.example.dagger.dagger.scop.PerActivity
@@ -23,6 +24,7 @@ interface ActivityComponent {
     fun getCar(): Car
     fun inject(activity: MainActivity)
 
+    /*
     @Subcomponent.Builder
     interface Builder {
 
@@ -35,6 +37,15 @@ interface ActivityComponent {
     fun engineCapacity(@Named("engineCapacity") engineCapacity: Int): Builder
 
     fun build(): ActivityComponent
+    }
+    */
+
+    @Subcomponent.Factory
+    interface Factory {
+        fun create(
+            @BindsInstance @Named("horsePower") horsePower: Int,
+            @BindsInstance @Named("engineCapacity") engineCapacity: Int
+        ): ActivityComponent
     }
 
 }

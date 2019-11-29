@@ -22,6 +22,7 @@ interface AppComponent {
      * Factory method
      * fun getActivityComponent(dieselEngineModule: DieselEngineModule, ...): ActivityComponent
      * */
-    fun getActivityComponentBuilder(): ActivityComponent.Builder
+//    fun getActivityComponentBuilder(): ActivityComponent.Builder
+    fun getActivityComponentFactory(): ActivityComponent.Factory
 
 }
